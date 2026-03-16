@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -286,11 +285,22 @@ function renderBlock(block, i) {
   }
 }
 
+// ── Static paths for export ────────────────────────────────────────────────────
+
+export function getStaticPaths() {
+  return {
+    paths: Object.keys(projectData).map((id) => ({ params: { id } })),
+    fallback: false,
+  };
+}
+
+export function getStaticProps({ params }) {
+  return { props: { id: params.id } };
+}
+
 // ── Page ───────────────────────────────────────────────────────────────────────
 
-export default function ProjectPage() {
-  const router = useRouter();
-  const { id } = router.query;
+export default function ProjectPage({ id }) {
   const project = projectData[id];
 
   if (!id) return null;
