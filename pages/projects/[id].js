@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 // ── Project data ───────────────────────────────────────────────────────────────
 
 const projectData = {
@@ -369,7 +371,7 @@ export default function ProjectPage({ id }) {
             {project.gallery.map((src, i) => (
               <img
                 key={i}
-                src={src}
+                src={`${BASE}${src}`}
                 alt={`${project.title} screenshot ${i + 1}`}
                 className="w-full object-cover border border-[#1e1e1e]"
               />

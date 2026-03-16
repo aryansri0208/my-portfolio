@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   assetPrefix: "/my-portfolio",
   trailingSlash: true,
   images: { unoptimized: true },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: "/my-portfolio",
+  },
 };
 
 export default nextConfig;

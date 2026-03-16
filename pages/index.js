@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
@@ -272,7 +275,7 @@ function HeroSection() {
           <div className="relative">
             <div className="absolute inset-0 border border-[#c9a96e]/20 translate-x-3 translate-y-3" />
             <img
-              src="/your-photo.jpg"
+              src={`${BASE}/your-photo.jpg`}
               alt="Aryan Srivastava"
               className="relative w-full object-cover transition-all duration-500 border border-[#1e1e1e]"
               style={{ aspectRatio: "3/4" }}
@@ -331,33 +334,33 @@ function ProjectsSection() {
       <div key={active} className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <AnimatePresence>
           {filtered.map((project, i) => (
-            <motion.a
-              key={project.title}
-              href={`/projects/${project.id}`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="group block p-7 bg-[#111111] border border-[#1e1e1e] hover:border-[#c9a96e]/25 transition-all duration-300"
-            >
-              <div className="flex items-start justify-between mb-5">
-                <h3 className="font-serif text-xl text-[#e8e0d4] group-hover:text-[#c9a96e] transition-colors duration-200">
-                  {project.title}
-                </h3>
-                <span className="text-[#2a2520] group-hover:text-[#c9a96e] transition-colors duration-200 text-base mt-0.5">
-                  →
-                </span>
-              </div>
+            <Link key={project.title} href={`/projects/${project.id}`}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="group cursor-pointer p-7 bg-[#111111] border border-[#1e1e1e] hover:border-[#c9a96e]/25 transition-all duration-300"
+              >
+                <div className="flex items-start justify-between mb-5">
+                  <h3 className="font-serif text-xl text-[#e8e0d4] group-hover:text-[#c9a96e] transition-colors duration-200">
+                    {project.title}
+                  </h3>
+                  <span className="text-[#2a2520] group-hover:text-[#c9a96e] transition-colors duration-200 text-base mt-0.5">
+                    →
+                  </span>
+                </div>
 
-              <p className="text-[#5a5450] text-sm leading-relaxed mb-6">
-                {project.description}
-              </p>
+                <p className="text-[#5a5450] text-sm leading-relaxed mb-6">
+                  {project.description}
+                </p>
 
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <Tag key={tag}>{tag}</Tag>
-                ))}
-              </div>
-            </motion.a>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <Tag key={tag}>{tag}</Tag>
+                  ))}
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </AnimatePresence>
       </div>
