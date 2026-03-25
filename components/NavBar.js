@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const navLinks = [
+  { href: "#startups", label: "Startups" },
   { href: "#projects", label: "Projects" },
   { href: "#tabla", label: "Music" },
   { href: "#beyond", label: "Beyond" },

@@ -7,11 +7,12 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const projectData = {
   Grocio: {
+    isStartup: true,
     title: "Grocio",
     subtitle: "AI-Powered Pantry Assistant",
-    tags: ["Flutter", "Firebase", "OpenAI", "Dart"],
+    tags: ["Agentic AI", "LLM", "Flutter", "Firebase", "Dart"],
     description: [
-      { type: "paragraph", content: "Grocio is an AI-based smart pantry management app that helps you track your groceries and household items, recommends recipes based on your pantry contents, and sends timely notifications for restocking and expiration dates." },
+      { type: "paragraph", content: "Grocio was fully deployed and live with real users. Grocio is an AI-based smart pantry management app that helps you track your groceries and household items, recommends recipes based on your pantry contents, and sends timely notifications for restocking and expiration dates." },
       { type: "heading", content: "Cloud-Powered Real-Time Database" },
       { type: "list", items: ["Built on Firebase Firestore for instantaneous data synchronization", "Multi-device support with real-time updates across all user devices", "Efficient data modeling for pantry items, recipes, and user preferences", "Offline-first architecture ensuring functionality without internet connection", "Automatic conflict resolution for concurrent updates"] },
       { type: "heading", content: "AI-Powered Kitchen Assistant" },
@@ -245,6 +246,71 @@ const projectData = {
     links: [{ text: "GitHub Repository", url: "https://github.com/aryansri0208/ECE-20875" }],
     gallery: ["/ECE20875.png"],
   },
+  Exply: {
+    isStartup: true,
+    title: "Exply",
+    subtitle: "Understand any text, instantly.",
+    tags: ["LLM", "Agentic AI", "Chrome Extension", "Manifest V3"],
+    description: [
+      { type: "paragraph", content: "Exply was fully deployed and published to the Chrome Web Store with active users. Exply is a lightweight Chrome extension that provides instant, in-context explanations of any highlighted text — directly on the page you're reading. No tab-switching, no sign-up, no tracking." },
+      { type: "heading", content: "How it works" },
+      { type: "list", items: ["Highlight at least 8 characters of any text on any webpage", "Click the 'Exply's Explanation' button that appears", "Read the AI-generated explanation inline, without leaving your context", "Optionally ask a single follow-up clarifying question"] },
+      { type: "heading", content: "Design philosophy" },
+      { type: "list", items: ["Deliberate constraints: one explanation per interaction, no conversation memory", "Bounded text extraction — only explicitly selected text is processed", "No login required, no browsing history tracked, no personal data stored", "Built for students, developers, and professionals encountering unfamiliar concepts"] },
+      { type: "heading", content: "Technical details" },
+      { type: "list", items: ["Manifest V3 Chrome extension architecture", "Vanilla JavaScript with Chrome Storage API and Fetch API", "Privacy-first: all processing is user-initiated, no background scraping"] },
+    ],
+    links: [
+      { text: "GitHub Repository", url: "https://github.com/aryansri0208/exply" },
+      { text: "Website", url: "https://aryansri0208.github.io/exply-info/" },
+    ],
+    gallery: [
+      "/exply-hero-demo.png",
+      "/step-1-highlight.png",
+      "/step-2-click.png",
+      "/step-3-explanation.png",
+    ],
+  },
+  ClauseAI: {
+    isStartup: true,
+    title: "ClauseAI",
+    subtitle: "The Intelligence Layer for Enterprise AI Infrastructure",
+    tags: ["AI Observability", "LLMOps", "Enterprise", "Infrastructure"],
+    description: [
+      { type: "paragraph", content: "ClauseAI provides visibility and control across enterprise AI infrastructure — monitoring cost, reliability, and risk across models, vendors, and AI workflows so engineering and finance teams can scale AI with confidence." },
+      { type: "heading", content: "Infrastructure instrumentation" },
+      { type: "list", items: ["Collects token usage, latency patterns, and output metadata from model serving layers", "Per-request cost data from API gateways across all vendors", "Unified observability across your entire AI stack"] },
+      { type: "heading", content: "Continuous intelligence" },
+      { type: "list", items: ["Benchmarks models against real production workloads (not synthetic evals)", "Detects hallucinations, performance regressions, cost leakage, and data drift", "Alerts before issues reach customers"] },
+      { type: "heading", content: "Optimization layer" },
+      { type: "list", items: ["Routes requests to the optimal model based on real-world performance data", "Switches vendors automatically, optimizes token usage", "Adjusts architectures based on observed cost and latency tradeoffs"] },
+      { type: "paragraph", content: "Built for engineering, finance, security, and compliance teams that need AI governance at scale — not just dashboards, but actionable intelligence." },
+    ],
+    links: [{ text: "Website", url: "https://clauseai.info/" }],
+    gallery: [
+      "/clauseai-overview-dashboard.png",
+      "/clauseai-vendor-benchmarking.png",
+      "/clauseai-vendor-scorecard.png",
+      "/clauseai-alert-recommendation.png",
+    ],
+  },
+  Nucleo: {
+    isStartup: true,
+    title: "Nucleo",
+    subtitle: "AI Compliance Scanner for Nuclear Regulatory Documents",
+    tags: ["Agentic AI", "LLM", "AWS Lambda", "OpenAI", "Compliance Automation"],
+    description: [
+      { type: "paragraph", content: "Nucleo was fully deployed and used in production. Nucleo is a production-ready web platform that automates compliance detection in documents destined for NRC (Nuclear Regulatory Commission) review. It combines hybrid rule-based and AI-powered scanning with a human oversight workflow — allowing reviewers to approve, override, and export corrected PDFs." },
+      { type: "heading", content: "Core workflow" },
+      { type: "list", items: ["Upload documents for NRC review via a dashboard", "AI + rule-based engine scans for compliance violations", "Reviewers inspect flagged issues in an inline PDF viewer with highlights", "Human override mechanism for each detected issue", "Apply approved corrections and export a clean PDF"] },
+      { type: "heading", content: "Compliance rules" },
+      { type: "list", items: ["GEN-UNITS-001: Missing units on numerical values", "GEN-ID-002: Unexpanded acronyms on first use", "CIT-CFR-003: Improper CFR citation references", "DATE-FMT-004: Non-ISO date formats", "PASS-VOICE-005: Passive voice in commitment statements"] },
+      { type: "heading", content: "Technical stack" },
+      { type: "list", items: ["Frontend: Next.js 14 (App Router), TypeScript, Tailwind CSS, shadcn/ui", "Backend: AWS Lambda + API Gateway, Node.js 20", "Storage: AWS DynamoDB (single-table design), AWS S3 + CloudFront", "AI: OpenAI API for violation detection, AWS Textract for OCR", "Auth: Firebase Authentication (email/password + Google)"] },
+    ],
+    links: [{ text: "GitHub Repository", url: "https://github.com/aryansri0208/nucleo.ai" }],
+    gallery: [],
+  },
 };
 
 // ── Primitives ─────────────────────────────────────────────────────────────────
@@ -333,10 +399,10 @@ export default function ProjectPage({ id }) {
           className="mb-16"
         >
           <Link
-            href="/#projects"
+            href={project.isStartup ? "/#startups" : "/#projects"}
             className="font-mono text-xs tracking-[0.18em] uppercase text-[#3a3530] hover:text-[#c9a96e] transition-colors duration-200"
           >
-            ← Projects
+            ← {project.isStartup ? "Startups" : "Projects"}
           </Link>
         </motion.div>
 
